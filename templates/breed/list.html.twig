@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <table class="table col-md-6">
+                <tbody>
+                    <tr>
+                        <th class="col-8">Nazwa</th>
+                        <th class="col-4"></th>
+                    </tr>
+                    {% for breed in breeds %}
+                        <tr>
+                            <td>{{ breed.name }}</td>
+                            <td>
+                                <a href="{{ path('breed_edit', { id: breed.id }) }}">Edytuj</a>
+                                | 
+                                <a href="{{ path('breed_delete', { id: breed.id }) }}">Usuń</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <div class="col-md-6">
+                {{ form(form) }}
+            </div>
+        </div>
+    </div>
+{% endblock %}

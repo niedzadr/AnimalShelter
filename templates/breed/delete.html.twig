@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container">
+        <div class=".col-10">
+            <h4>Czy na pewno chcesz usunąć tę rasę/gatunek z rejestru?</h4>
+            <p>Nazwa: {{ breed.name }}</p>
+            <p>Wystąpienia: {{ count }}</p>
+            {{ form(form) }}
+        </div>
+    </div>
+{% endblock %}

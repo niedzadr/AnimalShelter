@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <table class="table">
+        <tbody>
+            <tr>
+                <th scope="row">Imię</th>
+                <td>{{ animal.name }}</td>
+            </tr>
+            <tr>
+                <th scope="row">Rasa/Gatunek</th>
+                <td>{{ animal.breed.name }}</td>
+            </tr>
+            <tr>
+                <th scope="row">Kolor</th>
+                <td>{{ animal.color.name }}</td>
+            </tr>
+            <tr>
+                <th scope="row">Rok urodzenia</th>
+                <td>{{ animal.yearOfBirth }}</td>
+            </tr>
+            <tr>
+                <th scope="row">Data przyjęcia</th>
+                <td>{{ animal.admissionDate | date("d.m.Y") }}</td>
+            </tr>
+            <tr>
+                <th scope="row">Waga</th>
+                <td>{{ animal.weigth }} kg</td>
+            </tr>
+            <tr>
+                <th scope="row">Wzrost (wysokość)</th>
+                <td>{{ animal.height }} cm</td>
+            </tr>
+            <tr>
+                <th scope="row">Długość</th>
+                <td>{{ animal.length }} cm</td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <a href="/animal/edit/{{ animal.id }}">Edytuj</a>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <a href="/animal/delete/{{ animal.id }}">Usuń</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+{% endblock %}

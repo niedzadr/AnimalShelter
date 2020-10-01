@@ -1,0 +1,3 @@
+app_homepage:
+    path: /animals
+    controller: App/Controller/AnimalController::animals
